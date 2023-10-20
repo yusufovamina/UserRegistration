@@ -39,10 +39,16 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF60D4AE"/>
-                        <GradientStop Color="#FF35D4A0" Offset="1"/>
-                    </LinearGradientBrush>
+                    <ImageBrush ImageSource="https://assets.biglots.com/is/image/biglots/810523678-a9-01" Stretch="UniformToFill" TileMode="None">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0" CenterX="0"/>
+                                <SkewTransform CenterX="0" CenterY="0"/>
+                                <RotateTransform CenterX="0" CenterY="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
                 </Grid.Background>
                 <Button
   Style="{StaticResource MaterialDesignPaperDarkButton}"
