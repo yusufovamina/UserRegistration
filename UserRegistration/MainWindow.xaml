@@ -19,17 +19,11 @@
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <materialDesign:PackIcon Kind="AccountCircleOutline" RenderTransformOrigin="48.3,1.653" Margin="746,0,0,0" VerticalAlignment="Center" Height="40" Width="31" />
-            <materialDesign:PackIcon Kind="Magnify" Margin="427,0,0,0" Height="30" Width="37" VerticalAlignment="Center" />
-            <materialDesign:PackIcon Kind="Menu" Height="40" Width="35" Margin="19,0,0,0" VerticalAlignment="Center" />
-            <TextBlock HorizontalAlignment="Left" Height="20" Margin="479,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Width="180" Background="#FFF9F9F9"/>
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFF9900"/>
-                    <GradientStop Color="#FFE3AC5A" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
+        <Grid Grid.Row="0" Background="Black">
+            <materialDesign:PackIcon Kind="AccountCircleOutline" RenderTransformOrigin="48.3,1.653" Margin="746,0,0,0" VerticalAlignment="Center" Height="40" Width="31" Foreground="White" />
+            <materialDesign:PackIcon Kind="Magnify" Margin="78,0,0,0" Height="30" Width="37" VerticalAlignment="Center" Foreground="White" />
+            <materialDesign:PackIcon Kind="Menu" Height="40" Width="35" Margin="19,0,0,0" VerticalAlignment="Center" Foreground="White" />
+            <TextBlock HorizontalAlignment="Left" Height="20" Margin="120,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Width="180" Background="#FFF9F9F9"/>
 
         </Grid>
         <Grid Grid.Row="1">
@@ -39,7 +33,7 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.Background>
-                    <ImageBrush ImageSource="https://assets.biglots.com/is/image/biglots/810523678-a9-01" Stretch="UniformToFill" TileMode="None">
+                    <ImageBrush ImageSource="https://m.media-amazon.com/images/I/61p3nN2wJRL._AC_SX569_.jpg" Stretch="UniformToFill" TileMode="None">
                         <ImageBrush.RelativeTransform>
                             <TransformGroup>
                                 <ScaleTransform CenterY="0" CenterX="0"/>
@@ -71,7 +65,13 @@
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" Margin="7,111,9,241" />
 
             </Grid>
-            <Grid Grid.Column="1" Background="#FF9A93F4">
+            <Grid Grid.Column="1">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FF938BEF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="381*"/>
                     <ColumnDefinition Width="319*"/>
@@ -81,9 +81,21 @@
                     <RowDefinition Height="14*"/>
                     <RowDefinition Height="157*"/>
                 </Grid.RowDefinitions>
+
+                <Grid
+  Width="124">
+                    <Button
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    materialDesign:ButtonProgressAssist.Value="-1"
+    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+    Content="Create account"
+    Margin="-110,339,114,-158"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                </Grid>
                 <materialDesign:Flipper
   
-  materialDesign:ElevationAssist.Elevation="Dp0" Margin="371,22,131,133" Grid.RowSpan="3" Grid.ColumnSpan="2">
+  materialDesign:ElevationAssist.Elevation="Dp0" Margin="35,10,105,144" Grid.RowSpan="3" Grid.Column="1">
                     <materialDesign:Flipper.FrontContent>
                         <Grid
       Height="256"
@@ -197,7 +209,7 @@
                     </materialDesign:Flipper.BackContent>
                 </materialDesign:Flipper>
 
-                <materialDesign:PackIcon Kind="Cake" Margin="9,152,0,0" RenderTransformOrigin="0.1,3.084" Height="24" Width="21" />
+                <materialDesign:PackIcon Kind="Cake" Margin="9,139,0,0" RenderTransformOrigin="0.1,3.084" Height="43" Width="23" />
                 <StackPanel Margin="350,83,74,38" Grid.ColumnSpan="2" Grid.Row="2" RenderTransformOrigin="0.758,1.605">
                     <PasswordBox
     Style="{StaticResource MaterialDesignRevealPasswordBox}"
@@ -205,13 +217,13 @@
     materialDesign:PasswordBoxAssist.Password="{Binding Password1, Mode=TwoWay}"
     materialDesign:HintAssist.Hint="Password"
     materialDesign:TextFieldAssist.HasClearButton="True"
-    materialDesign:HintAssist.HelperText="At least 8 characters" Width="281" />
+    materialDesign:HintAssist.HelperText="At least 8 characters" Width="264" Height="31" />
                 </StackPanel>
-                <materialDesign:PackIcon Kind="Phone" Margin="9,75,0,0" Grid.Row="2" />
+                <materialDesign:PackIcon Kind="Phone" Margin="13,68,0,0" Grid.Row="2" RenderTransformOrigin="0.078,-0.71" />
                 <TextBox
   x:Name="NameTextBox"
   materialDesign:HintAssist.Hint="Name"
-  materialDesign:HintAssist.HelperText="Helper text longer than error" Margin="66,38,161,149">
+  materialDesign:HintAssist.HelperText="Helper text longer than error" Margin="75,19,152,168">
                     <TextBox.Text>
                         <Binding
       Path="Name"
@@ -226,26 +238,20 @@
                 <TextBox
   x:Name="PhoneTextBox"
   MaxLength="12"
-  materialDesign:TransitionAssist.DisableTransitions="True" Margin="30,64,171,64" Grid.Row="2" />
+  materialDesign:TransitionAssist.DisableTransitions="True" Margin="40,55,171,73" Grid.Row="2" />
                 <DatePicker
   materialDesign:HintAssist.Hint="Pick Date"
   materialDesign:HintAssist.HelperText="Helper text"
   materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="2"
   materialDesign:HintAssist.FloatingOffset="0,-22"
-  Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="40,143,211,0" VerticalAlignment="Top" Height="49" Background="#FFF7F5F5" />
+  Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="50,139,201,0" VerticalAlignment="Top" Height="48" Background="#FFF7F5F5" />
                 <StackPanel Margin="0,6,178,102" Grid.RowSpan="2" Grid.Row="1">
-                    <Grid Width="252">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                    </Grid>
                     <ComboBox
     x:Name="FilledComboBox"
     Style="{StaticResource MaterialDesignFilledComboBox}"
     IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
     materialDesign:HintAssist.Hint="Choose gender"
-    Width="174" Height="47" Background="{DynamicResource MaterialDesignBackground}" SelectionChanged="FilledComboBox_SelectionChanged" RenderTransformOrigin="0.5,0.5">
+    Width="184" Height="44" Background="{DynamicResource MaterialDesignBackground}" SelectionChanged="FilledComboBox_SelectionChanged" RenderTransformOrigin="0.5,0.5">
                         <ComboBox.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -261,9 +267,15 @@
                         <ComboBoxItem
       Content="Other" />
                     </ComboBox>
+                    <Grid Width="252">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
                 </StackPanel>
-                <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
-                <Label Content="Surname" HorizontalAlignment="Left" Height="26" Margin="10,91,0,0" VerticalAlignment="Top" Width="60"/>
+                <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,23,0,0"/>
+                <Label Content="Surname" HorizontalAlignment="Left" Height="26" Margin="10,76,0,0" VerticalAlignment="Top" Width="60"/>
                 <Grid
   Width="124" Margin="338,194,238,19" Grid.ColumnSpan="2">
 
@@ -271,7 +283,7 @@
                 <TextBox
                     x:Name="NameTextBox_Copy"
                     materialDesign:HintAssist.Hint="Surname"
-                    materialDesign:HintAssist.HelperText="Helper text longer than error" Margin="75,91,152,96" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    materialDesign:HintAssist.HelperText="Helper text longer than error" Margin="75,76,152,111" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
         </Grid>
