@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserRegistration"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="466" Width="811"
             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
@@ -65,7 +65,7 @@
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" Margin="7,111,9,241" />
 
             </Grid>
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Margin="0,1,0,-1">
                 <Grid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White"/>
@@ -90,12 +90,12 @@
     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
     materialDesign:ButtonProgressAssist.IsIndeterminate="True"
     Content="Create account"
-    Margin="-110,339,114,-158"
+    Margin="-110,339,102,-158"
     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
                 </Grid>
                 <materialDesign:Flipper
   
-  materialDesign:ElevationAssist.Elevation="Dp0" Margin="35,10,105,144" Grid.RowSpan="3" Grid.Column="1">
+  materialDesign:ElevationAssist.Elevation="Dp0" Margin="35,10,84,125" Grid.RowSpan="3" Grid.Column="1">
                     <materialDesign:Flipper.FrontContent>
                         <Grid
       Height="256"
